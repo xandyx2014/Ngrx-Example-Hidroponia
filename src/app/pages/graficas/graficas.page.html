@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Graficas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+        <ion-card-title>Ph: </ion-card-title>
+      </ion-card-header>
+      <div fxLayoutAlign="center center">
+          <ion-img class="hot-img" src="./assets/icon/ph.svg"></ion-img>
+          <ion-text color="primary" style="font-size: 3rem">
+              {{datosMedicion?.ph}}
+            </ion-text>
+      </div>  
+  </ion-card> 
+  <ion-card>
+    <ion-card-header>
+        <ion-card-title>Solucion: </ion-card-title>
+      </ion-card-header>
+      <div fxLayoutAlign="center center">
+          <ion-img class="hot-img" src="./assets/icon/tubes.svg"></ion-img>
+          <ion-text color="primary" style="font-size: 3rem">
+              {{datosMedicion?.solucion}}
+            </ion-text>
+      </div>  
+  </ion-card> 
+  <ion-card>
+    <ion-card-header>
+        <ion-card-title>Luz: </ion-card-title>
+      </ion-card-header>
+      <div fxLayoutAlign="center center">
+          <ion-img class="hot-img" src="./assets/icon/sunny.svg"></ion-img>
+          <ion-text color="primary" style="font-size: 3rem">
+              {{datosMedicion?.luz}}
+            </ion-text>
+      </div>  
+  </ion-card> 
+  <div class="flex">
+    <div class="flex-item">
+      <div style="display: block;">
+      <canvas baseChart height="400"
+                  [datasets]="lineChartData"
+                  [labels]="lineChartLabels"
+                  [options]="lineChartOptions"
+                  [colors]="lineChartColors"
+                  [chartType]="lineChartType"
+                  ></canvas>
+      </div>
+    </div>
+    <ion-card>
+      <ion-card-content>
+        <table id="hor-minimalist-a">
+          <tr>
+            <th *ngFor="let label of lineChartLabels">{{label}}</th>
+          </tr>
+          <tr *ngFor="let d of lineChartData; let i=index" [class]="'line-'+i">
+            <td *ngFor="let label of lineChartLabels; let j=index">{{d && d.data[j]}}</td>
+          </tr>
+        </table>
+      </ion-card-content>
+    </ion-card>
+    <div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-img src="assets/icon/plant2.svg" style="height: 200px"></ion-img>
+    <ion-card-content>
+        <form>
+            <ion-item>
+              <ion-label position="stacked">Usuario</ion-label>
+              <ion-input autofocus="true"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Contraseña</ion-label>
+              <ion-input type="password"></ion-input>
+            </ion-item>
+            <br>
+            <ion-button (click)="onLogin()" color="primary" expand="full">
+              Login
+            </ion-button>
+          </form>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

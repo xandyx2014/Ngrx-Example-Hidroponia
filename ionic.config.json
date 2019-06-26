@@ -1,5 +1,7 @@
 {
   "name": "hidro",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
